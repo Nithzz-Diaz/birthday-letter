@@ -429,6 +429,7 @@ footer {
 /* COMPACT CINEMATIC PHOTO ADMIN LOGIN */
 
 #photo-login {
+    display: none;
     text-align: center;
     margin: 20px auto;
     padding: 20px;
@@ -630,7 +631,10 @@ footer {
     </div>
 
 </div>
-
+<button class="gold-button" id="adminToggle" onclick="toggleAdminLogin()">
+    🔐 Photo Admin Login
+</button>
+        
 <div id="photo-login" style="margin-top:20px;">
     <h3>Photo Admin Login</h3>
     <input type="email" id="adminEmail" placeholder="Your email">
@@ -779,7 +783,19 @@ const photoDB = window.supabase.createClient(
     SUPABASE_URL,
     SUPABASE_KEY
 );
+// TOGGLE ADMIN LOGIN VISIBILITY
+function toggleAdminLogin() {
+    const loginBox = document.getElementById("photo-login");
+    const toggleButton = document.getElementById("adminToggle");
 
+    if (loginBox.style.display === "none") {
+        loginBox.style.display = "block";
+        toggleButton.textContent = "✖ Close Admin Login";
+    } else {
+        loginBox.style.display = "none";
+        toggleButton.textContent = "🔐 Photo Admin Login";
+    }
+}
 // ADMIN LOGIN
 async function photoLogin() {
     const email = document.getElementById("adminEmail").value;
