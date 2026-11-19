@@ -712,6 +712,14 @@ footer {
 
 function openLetter() {
 
+    const music = document.getElementById("birthdayMusic");
+
+    if (music && music.paused) {
+        music.play().catch(error => {
+            console.log("Music playback was blocked:", error);
+        });
+    }
+
     document.getElementById("page1").classList.remove("active");
 
     document.getElementById("page2").classList.add("active");
@@ -722,7 +730,6 @@ function openLetter() {
     });
 
 }
-
 
 function goBack() {
 
