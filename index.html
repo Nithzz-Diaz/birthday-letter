@@ -174,24 +174,35 @@ body {
     width: 100%;
     max-width: 900px;
     padding: 55px 45px;
-    background: rgba(255,255,255,0.9);
-    border: 1px solid var(--light-gold);
-    box-shadow: 0 15px 50px rgba(150,120,60,0.10);
+    background: #f8f1e5;
+    border: 1px solid rgba(218, 180, 112, 0.9);
+    box-shadow:
+    0 18px 45px rgba(0,0,0,0.28),
+    0 0 35px rgba(197,160,89,0.12),
+    inset 0 0 25px rgba(197,160,89,0.04);
     text-align: center;
 }
-
 .letter-heading {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(40px, 6vw, 55px);
     font-weight: 600;
-    color: #806237;
+    color: #6b3f16;
+    text-shadow: 0 2px 8px rgba(160, 120, 50, 0.12);
 }
 
 .divider {
-    width: 100px;
+    width: 120px;
     height: 2px;
-    background: var(--gold);
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #c5a059,
+        #e8d5a5,
+        #c5a059,
+        transparent
+    );
     margin: 20px auto 40px;
+    position: relative;
 }
 
 /* PERSONAL MESSAGE AREA */
@@ -200,26 +211,38 @@ body {
     text-align: left;
     padding: 30px;
     min-height: 260px;
-    border: 1px solid #eadfc8;
-    background: #fffefa;
+    border: 1px solid rgba(197, 160, 89, 0.35);
+    background: #fffaf1;
     margin-bottom: 50px;
+    box-shadow: 0 5px 20px rgba(100, 60, 20, 0.04);
 }
 
 .message-label {
     font-family: 'Dancing Script', cursive;
-    color: var(--dark-gold);
-    font-size: 25px;
-    margin-bottom: 20px;
+    color: #8a642b;
+    font-size: 29px;
+    font-weight: 600;
+    margin-bottom: 22px;
+    text-shadow: 0 1px 3px rgba(138, 100, 43, 0.10);
 }
 
 /* EDIT YOUR BIRTHDAY MESSAGE HERE */
 
 .message-content {
-    font-family: 'Dancing Script', cursive;
-    font-size: 23px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+    font-weight: 400;
     line-height: 1.9;
-    color: #75634c;
+    color: #4a1026;
     min-height: 150px;
+}
+
+.message-content p {
+    margin-bottom: 18px;
+}
+
+.message-content p:last-child {
+    margin-bottom: 0;
 }
 
 /* PHOTO GALLERY */
@@ -246,10 +269,12 @@ body {
 
 .photo-frame {
     aspect-ratio: 3 / 4;
-    border: 1px solid var(--gold);
-    padding: 8px;
-    background: white;
-    box-shadow: 0 5px 15px rgba(150,120,60,0.12);
+    border: 1px solid rgba(186, 145, 75, 0.75);
+    padding: 9px;
+    background: #fffaf1;
+    box-shadow:
+        0 8px 22px rgba(80, 35, 20, 0.10),
+        0 0 12px rgba(197, 160, 89, 0.06);
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -279,9 +304,34 @@ body {
 .photo-placeholder span {
     font-size: 30px;
 }
+.photo-frame {
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
 
+.photo-frame:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 12px 28px rgba(80, 35, 20, 0.16),
+        0 0 18px rgba(197, 160, 89, 0.10);
+}
 .back-button {
     margin-top: 10px;
+    padding: 12px 28px;
+    background: transparent;
+    border: 1px solid #b89558;
+    color: #795522;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+    .back-button:hover {
+    background: #8a642b;
+    color: #fffaf1;
+    box-shadow: 0 4px 15px rgba(138, 100, 43, 0.20);
+    transform: translateY(-2px);
 }
 
 /* FOOTER */
